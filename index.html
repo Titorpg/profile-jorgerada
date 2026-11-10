@@ -68,6 +68,28 @@ svg.brand { fill: currentColor !important; stroke: none !important; }
 .row b { font-weight: 600; overflow-wrap: anywhere; }
 .copy { background: transparent; color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; font: inherit; font-size: 14px; font-weight: 500; cursor: pointer; }
 .copy:hover { background: var(--wash); }
+
+.services li { cursor: pointer; transition: background .15s; }
+.services li:hover { background: var(--wash); }
+.services li:focus-visible { outline: 3px solid var(--ink); outline-offset: -3px; }
+.services li > div { flex: 1; }
+.chev { flex: none; align-self: center; font-size: 26px; line-height: 1; color: var(--soft); }
+.ov { position: fixed; inset: 0; z-index: 50; display: none; align-items: center; justify-content: center; padding: 20px; background: rgba(10,10,10,.55); }
+.ov.on { display: flex; }
+.modal { position: relative; width: 100%; max-width: 400px; max-height: 90vh; overflow-y: auto; background: var(--paper); border-radius: 20px; padding: 28px 24px 24px; box-shadow: 0 30px 80px rgba(0,0,0,.35); animation: pop .22s ease-out both; }
+@keyframes pop { from { transform: translateY(12px) scale(.98); } to { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .modal { animation: none; } }
+.modal .ico { margin-bottom: 14px; }
+.modal h3 { font-family: var(--display); font-weight: 800; font-size: 24px; letter-spacing: -0.02em; margin: 0 0 8px; line-height: 1.15; }
+.modal p { margin: 0 0 16px; color: var(--soft); }
+.modal ul { margin: 0 0 22px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.modal li { display: flex; gap: 10px; align-items: flex-start; padding: 0; border: 0; margin: 0; cursor: default; }
+.modal li::before { content: ""; flex: none; width: 7px; height: 7px; margin-top: 9px; border-radius: 50%; background: var(--ink); }
+.modal li:first-child { border: 0; margin: 0; }
+.modal .btn { justify-content: center; text-align: center; }
+.x { position: absolute; top: 12px; right: 12px; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: var(--paper); font-size: 22px; line-height: 1; cursor: pointer; color: var(--ink); }
+.x:hover { background: var(--wash); }
+.x:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
 </style>
 </head>
 <body>
@@ -100,31 +122,31 @@ svg.brand { fill: currentColor !important; stroke: none !important; }
   <section class="services-box" aria-labelledby="serv">
     <h2 id="serv">Servicios</h2>
     <ul class="services">
-      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m18 13-.654-4.736a4 4 0 00-2.756-3.266l-9.163-2.9a2 2 0 00-2.017.493l-.82.819a2 2 0 00-.492 2.017l2.9 9.163a4 4 0 003.266 2.756L13 18" />
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-s="0"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m18 13-.654-4.736a4 4 0 00-2.756-3.266l-9.163-2.9a2 2 0 00-2.017.493l-.82.819a2 2 0 00-.492 2.017l2.9 9.163a4 4 0 003.266 2.756L13 18" />
   <path d="M18.648 12.352a1.205 1.205 0 011.704 0l1.296 1.296a1.205 1.205 0 010 1.704l-6.296 6.296a1.205 1.205 0 01-1.704 0l-1.296-1.296a1.205 1.205 0 010-1.704z" />
   <path d="m3 3 6.586 6.586" />
-  <circle cx="11" cy="11" r="2" /></svg></span><div><strong>Branding e identidad de marca</strong><span>Logo, colores y estilo para que tu negocio se vea profesional.</span></div></li>
-      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="7" x="3" y="3" rx="1" />
+  <circle cx="11" cy="11" r="2" /></svg></span><div><strong>Branding e identidad de marca</strong><span>Logo, colores y estilo para que tu negocio se vea profesional.</span></div><span class="chev" aria-hidden="true">&rsaquo;</span></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-s="1"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="7" x="3" y="3" rx="1" />
   <rect width="9" height="7" x="3" y="14" rx="1" />
-  <rect width="5" height="7" x="16" y="14" rx="1" /></svg></span><div><strong>Páginas web</strong><span>Personales y de negocios, listas para recibir clientes.</span></div></li>
-      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1" />
+  <rect width="5" height="7" x="16" y="14" rx="1" /></svg></span><div><strong>Páginas web</strong><span>Personales y de negocios, listas para recibir clientes.</span></div><span class="chev" aria-hidden="true">&rsaquo;</span></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-s="2"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1" />
   <rect width="7" height="5" x="14" y="3" rx="1" />
   <rect width="7" height="9" x="14" y="12" rx="1" />
-  <rect width="7" height="5" x="3" y="16" rx="1" /></svg></span><div><strong>Plataformas, aplicativos y apps</strong><span>Sistemas a la medida de cómo trabaja tu negocio.</span></div></li>
-      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8V4H8" />
+  <rect width="7" height="5" x="3" y="16" rx="1" /></svg></span><div><strong>Plataformas, aplicativos y apps</strong><span>Sistemas a la medida de cómo trabaja tu negocio.</span></div><span class="chev" aria-hidden="true">&rsaquo;</span></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-s="3"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8V4H8" />
   <rect width="16" height="12" x="4" y="8" rx="2" />
   <path d="M2 14h2" />
   <path d="M20 14h2" />
   <path d="M15 13v2" />
-  <path d="M9 13v2" /></svg></span><div><strong>Automatizaciones con IA</strong><span>Las tareas repetitivas se hacen solas.</span></div></li>
-      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72" />
+  <path d="M9 13v2" /></svg></span><div><strong>Automatizaciones con IA</strong><span>Las tareas repetitivas se hacen solas.</span></div><span class="chev" aria-hidden="true">&rsaquo;</span></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-s="4"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72" />
   <path d="m14 7 3 3" />
   <path d="M5 6v4" />
   <path d="M19 14v4" />
   <path d="M10 2v2" />
   <path d="M7 8H3" />
   <path d="M21 16h-4" />
-  <path d="M11 3H9" /></svg></span><div><strong>Herramientas con IA</strong><span>Soluciones que resuelven un problema concreto y te ahorran trabajo.</span></div></li>
+  <path d="M11 3H9" /></svg></span><div><strong>Herramientas con IA</strong><span>Soluciones que resuelven un problema concreto y te ahorran trabajo.</span></div><span class="chev" aria-hidden="true">&rsaquo;</span></li>
     </ul>
   </section>
 
@@ -143,6 +165,45 @@ document.querySelectorAll('.copy').forEach(function (b) {
     setTimeout(function () { b.textContent = 'Copiar'; }, 1800);
   });
 });
+</script>
+
+<div class="ov" id="ov" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="m-t">
+    <button class="x" id="m-x" type="button" aria-label="Cerrar">&times;</button>
+    <span class="ico" id="m-i" aria-hidden="true"></span>
+    <h3 id="m-t"></h3>
+    <p id="m-d"></p>
+    <ul id="m-l"></ul>
+    <a class="btn primary" id="m-w" href="#" target="_blank" rel="noopener"><span class="label"><span class="bi"><svg class="brand" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span><span>Cotizar por WhatsApp</span></span></a>
+  </div>
+</div>
+<script>
+var S=[
+ {t:"Branding e identidad de marca",d:"Tu marca es lo primero que ve un cliente. La construyo para que se vea coherente, profesional y fácil de recordar.",l:["Logo y sus variantes","Paleta de colores y tipografías","Guía de uso y piezas básicas para redes y tarjetas"],m:"una identidad de marca"},
+ {t:"Páginas web",d:"Sitios personales y de negocios claros, rápidos y listos para recibir clientes desde el celular.",l:["Diseño a tu medida, pensado para celular","Botones directos a WhatsApp y redes","Publicación y puesta en línea"],m:"una página web"},
+ {t:"Plataformas, aplicativos y apps",d:"Sistemas hechos a la medida de cómo trabaja tu negocio, para ordenar procesos y atender a más gente.",l:["Paneles de control y gestión","Registro de clientes, pedidos o reservas","Acceso desde celular o computador"],m:"una plataforma o app"},
+ {t:"Automatizaciones con IA",d:"Las tareas repetitivas se hacen solas: respuestas, avisos, reportes y registro de datos.",l:["Respuestas y seguimiento automático a clientes","Conexión entre las herramientas que ya usas","Reportes y avisos sin hacerlos a mano"],m:"una automatización con IA"},
+ {t:"Herramientas con IA",d:"Herramientas pensadas para resolver un problema concreto de tu trabajo y ahorrarte tiempo.",l:["Asistentes que redactan, resumen o analizan","Herramientas internas para tu equipo","Ajustadas a tu forma de trabajar"],m:"una herramienta con IA"}
+];
+var ov=document.getElementById('ov'),last=null;
+function openS(i,from){
+  var s=S[i];last=from;
+  document.getElementById('m-i').innerHTML=from.querySelector('.ico').innerHTML;
+  document.getElementById('m-t').textContent=s.t;
+  document.getElementById('m-d').textContent=s.d;
+  document.getElementById('m-l').innerHTML=s.l.map(function(x){return '<li>'+x+'</li>';}).join('');
+  document.getElementById('m-w').href='https://wa.me/573006463909?text='+encodeURIComponent('Hola Jorge, vi tu tarjeta y quiero cotizar '+s.m+'.');
+  ov.classList.add('on');ov.setAttribute('aria-hidden','false');
+  document.getElementById('m-x').focus();
+}
+function closeS(){ov.classList.remove('on');ov.setAttribute('aria-hidden','true');if(last)last.focus();}
+document.querySelectorAll('.services li').forEach(function(li){
+  li.addEventListener('click',function(){openS(+li.getAttribute('data-s'),li);});
+  li.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openS(+li.getAttribute('data-s'),li);}});
+});
+document.getElementById('m-x').addEventListener('click',closeS);
+ov.addEventListener('click',function(e){if(e.target===ov)closeS();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&ov.classList.contains('on'))closeS();});
 </script>
 </body>
 </html>
